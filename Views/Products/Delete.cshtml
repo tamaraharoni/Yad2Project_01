@@ -1,0 +1,28 @@
+﻿@model Yad2Project.Models.Product
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+
+    <h1>Are you shure you want to remove this item from Database?</h1>
+    <div> @Html.DisplayForModel()</div>
+    <div>
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" /> |
+        <a asp-action="Index">Back to list</a>
+    </form>
+    </div>
+
+</body>
+</html>

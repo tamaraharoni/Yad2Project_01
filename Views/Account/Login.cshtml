@@ -1,0 +1,27 @@
+﻿
+   @model Yad2Project.Models.LoginVM
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+
+    <form method="post" action="Login">
+        <p>@Html.LabelFor(m => Model.UserName)  @Html.EditorFor(m => Model.UserName)</p>
+        <p>@Html.LabelFor(m =>  Model.Password)  @Html.EditorFor(m => Model.Password)</p>
+        <p>@Html.LabelFor(m => Model.RemeberMe)  @Html.EditorFor(m => Model.RemeberMe)</p>
+        <input type="submit" title="click"/>
+
+    </form>
+
+
+</body>
+</html>

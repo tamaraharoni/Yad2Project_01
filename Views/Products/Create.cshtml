@@ -1,0 +1,74 @@
+﻿@model Yad2Project.Models.Product
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+
+     @*Owner  OwnerId  Title  ShortDescription  LongDescription   Date  Price 
+
+    State  PhotoAvatar  ImageName byte[] PhotoFile  ImageMimeType*@
+
+
+   <div class="container">
+        <h1 class="main-titel">Add a Product to the Shop</h1>
+        <form method="post" enctype="multipart/form-data" asp-action="Create">
+            <div asp-validation-summary="All"></div>
+            <div class="form-field">
+                <label asp-for="OwnerId"></label>
+                <input asp-for="OwnerId"/>
+                <span asp-validation-for="OwnerId"></span>
+
+                @*
+                    this tag doesnt work, and make the page not to be loaded->
+                    <select asp-for="OwnerId" asp-items="ViewBag.OwnerID">
+            <option selected="selected" value="">Select</option>
+        </select>*@
+
+                <span asp-validation-for="OwnerId"></span>
+            </div>
+
+            
+
+            <div class="form-field">
+                <label asp-for="Title"></label>
+                <input asp-for="Title"/>
+                <span asp-validation-for="Title"></span>
+            </div>
+
+            <div class="form-field">
+                <label asp-for="ShortDescription"></label>
+                <input asp-for="ShortDescription" />
+                <span asp-validation-for="ShortDescription"></span>
+            </div>
+            <div class="form-field">
+                <label asp-for="LongDescription"></label>
+                <textarea asp-for="LongDescription"></textarea>
+                <span asp-validation-for="LongDescription"></span>
+            </div>
+            <div class="form-field">
+                <label asp-for="Price"></label>
+                <input asp-for="Price" />
+                <span asp-validation-for="Price"></span>
+            </div>
+            <div class="form-field">
+                <label asp-for="PhotoAvatar"></label>
+                <input asp-for="PhotoAvatar" type="file" />
+                <span asp-validation-for="PhotoAvatar"></span>
+            </div>
+
+            <div class="form-field">
+                <input type="submit" value="Submit" />
+            </div>
+        </form>
+        </div>
+
+</body>
+</html>
